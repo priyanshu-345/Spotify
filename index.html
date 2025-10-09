@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Music Player</title>
+    <link rel="stylesheet" href="spotify.css"/>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Spotify">
+            <span>Spotify</span>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#home" class="nav-link active" data-view="home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#search" class="nav-link" data-view="search"><i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+                <li><a href="#library" class="nav-link" data-view="library"><i class="fa-solid fa-list"></i> Your Library</a></li>
+                <li><a href="#playlists" class="nav-link" data-view="playlists"><i class="fa-solid fa-music"></i> Playlists</a></li>
+                <li><a href="#liked" class="nav-link" data-view="liked"><i class="fa-solid fa-heart"></i> Liked Songs</a></li>
+                <li><a href="#profile" id="navProfile" class="nav-link" data-view="profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li><a href="#login" id="navLogin" class="nav-link" data-view="login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+                <li><a href="#signup" id="navSignup" class="nav-link" data-view="signup"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-controls">
+                <button class="nav-btn" id="backBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="nav-btn" id="forwardBtn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for songs, artists, or albums...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="user-menu">
+                <button class="user-btn" id="userMenuBtn"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </nav>
+        <!-- Home View -->
+        <div id="view-home" class="view">
+    <div class="container">
+                    <div class="songList">
+                        <div class="home-header">
+                            <h1>Made By Pranshu</h1>
+                            <div class="listening-stats">
+                                <div class="stat-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span id="totalListeningTime">0h 0m</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fa-solid fa-play"></i>
+                                    <span id="totalPlays">0 plays</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Section -->
+                    <div class="video-section">
+                        <h2>Featured Videos</h2>
+                        <div class="video-grid">
+                            <div class="video-card">
+                                <video class="home-video" autoplay muted loop>
+                                    <source src="a.mp4" type="video/mp4">
+                                </video>
+                                <div class="video-overlay">
+                                    <div class="video-title">P-POP CULTURE</div>
+                                    <div class="video-description">Latest Music Video</div>
+                                </div>
+                            </div>
+                            <div class="video-card">
+                                <video class="home-video" autoplay muted loop>
+                                    <source src="c.mp4" type="video/mp4">
+                                </video>
+                                <div class="video-overlay">
+                                    <div class="video-title">Music Collection</div>
+                                    <div class="video-description">Best Hits</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+        <div class="main">
+                <div id="container1">
+                    <div class="songItem"> <img src="1.jpg" alt="1">
+                        <br>
+                        <span class="songName">295</span>
+                                <span class="songlistplay"><span class="timestamp"> <i id="0"  class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                            </div>
+                    <div class="songItem">
+                        <img src="2.jpg" alt="2">
+                        <br>
+                        <span class="songName">Aroma</span>
+                        <span class="songlistplay"><span class="timestamp">  <i id="1"  class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="3.jpg" alt="3">
+                        <br>
+                        <span class="songName">dil Nu</span>
+                        <span class="songlistplay"><span class="timestamp"><i id="2" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="4.jpg" alt="4">
+                        <br>
+                        <span class="songName">Calaboose</span>
+                        <span class="songlistplay"><span class="timestamp"> <i  id="3" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="5.jpg" alt="5">
+                        <br>
+                        <span class="songName">Jhol</span>
+                        <span class="songlistplay"><span class="timestamp">  <i  id="4" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="6.jpg" alt="6">
+                        <br>
+                        <span class="songName">Bekhayali</span>
+                        <span class="songlistplay"><span class="timestamp">  <i id="5"  class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="7.jpg" alt="7">
+                        <br>
+                        <span class="songName">Sohneya</span>
+                        <span class="songlistplay"><span class="timestamp">  <i  id="6" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="8.jpg" alt="8">
+                        <br>
+                        <span class="songName">0 to 100</span>
+                        <span class="songlistplay"><span class="timestamp">   <i  id="7" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="9.jpg" alt="9">
+                        <br>
+                        <span class="songName">Pal Pal</span>
+                        <span class="songlistplay"><span class="timestamp"><i  id="8" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="10.jpg" alt="10">
+                        <br>
+                        <span class="songName"> Siddhu Panjab</span>
+                        <span class="songlistplay"><span class="timestamp"><i  id="9" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="11.jpg" alt="11">
+                        <br>
+                        <span class="songName">Jailaan</span>
+                        <span class="songlistplay"><span class="timestamp"><i  id="10" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                    </div>
+                    <div class="songItem">
+                        <img src="12.jpg" alt="12">
+                        <br>
+                        <span class="songName">Aaj Bhi</span>
+                        <span class="songlistplay"><span class="timestamp"> <i  id="11" class=" songItemplay fa-solid fa-circle-play"></i></span></span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <!-- Search View -->
+        <div id="view-search" class="view hidden">
+            <div class="search-results">
+                <h2>Search Results</h2>
+                <div id="songGrid" class="grid"></div>
+            </div>
+        </div>
+
+        <!-- Library View -->
+        <div id="view-library" class="view hidden">
+            <div class="library-content">
+                <h2>Your Library</h2>
+                
+                <!-- Library Video Section -->
+                <div class="library-video-section">
+                    <h3>Featured Content</h3>
+                    <div class="library-video-container">
+                        <video class="library-video" autoplay muted loop>
+                            <source src="0.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="library-video-overlay">
+                            <div class="library-video-content">
+                                <h4>Discover Your Music</h4>
+                                <p>Explore your personal collection and discover new favorites</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="library-categories" id="libraryCategories">
+                    <!-- Library categories will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Playlists View -->
+        <div id="view-playlists" class="view hidden">
+            <div class="playlists-content">
+                <h2>Playlists</h2>
+                <div id="playlistGrid" class="grid"></div>
+                <div id="playlistDetail" class="playlist-detail hidden"></div>
+            </div>
+        </div>
+
+            <!-- Liked Songs View -->
+            <div id="view-liked" class="view hidden">
+                <div class="liked-content">
+                    <h2>Liked Songs</h2>
+                    <div id="likedGrid" class="grid"></div>
+                </div>
+            </div>
+
+            <!-- Profile View -->
+            <div id="view-profile" class="view hidden">
+                <div class="profile-content">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img id="profileImage" src="logo.png" alt="Profile">
+                            <div class="avatar-overlay">
+                                <button class="change-avatar-btn" onclick="changeAvatar()" title="Change Photo">
+                                    <i class="fa-solid fa-camera"></i>
+                                </button>
+                                <button class="delete-avatar-btn" onclick="deleteAvatar()" title="Delete Photo">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="profileName">User Name</h2>
+                            <p id="profileEmail">user@example.com</p>
+                            <p id="profileJoinDate">Member since 2024</p>
+                            <div class="profile-actions">
+                                <button class="edit-profile-btn" onclick="toggleEditProfile()">
+                                    <i class="fa-solid fa-edit"></i>
+                                    Edit Profile
+                                </button>
+                                <button class="logout-btn" onclick="logout()">
+                                    <i class="fa-solid fa-sign-out-alt"></i>
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Edit Profile Form -->
+                    <div id="editProfileForm" class="edit-profile-form hidden">
+                        <h3>Edit Profile</h3>
+                        <form id="profileEditForm">
+                            <div class="form-group">
+                                <label for="editName">Full Name</label>
+                                <input type="text" id="editName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editEmail">Email</label>
+                                <input type="email" id="editEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editBio">Bio</label>
+                                <textarea id="editBio" placeholder="Tell us about yourself" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="editLocation">Location</label>
+                                <input type="text" id="editLocation" placeholder="Your location">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="cancel-btn" onclick="toggleEditProfile()">Cancel</button>
+                                <button type="submit" class="save-btn">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Total Songs</h3>
+                                <span id="totalSongs">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Liked Songs</h3>
+                                <span id="likedCount">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-list"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Playlists</h3>
+                                <span id="playlistCount">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Listening Time</h3>
+                                <span id="listeningTime">0h 0m</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Activity -->
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div id="recentActivity" class="activity-list">
+                            <!-- Recent activity will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Auth Views -->
+    <div id="view-login" class="view hidden">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="auth-logo">
+                        <i class="fa-brands fa-spotify"></i>
+                    </div>
+                    <h2>Welcome back</h2>
+                    <p>Sign in to your account</p>
+                </div>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                        <i class="fa-solid fa-envelope form-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        <i class="fa-solid fa-lock form-icon"></i>
+                        <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="auth-btn">
+                        <span>Sign In</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google" onclick="loginWithGoogle()">
+                        <i class="fa-brands fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn facebook" onclick="loginWithFacebook()">
+                        <i class="fa-brands fa-facebook"></i>
+                        Continue with Facebook
+                    </button>
+                </div>
+                <p class="auth-switch">Don't have an account? <a href="#signup" id="showSignup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-signup" class="view hidden">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="auth-logo">
+                        <i class="fa-brands fa-spotify"></i>
+                    </div>
+                    <h2>Create account</h2>
+                    <p>Sign up to get started</p>
+                </div>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Enter your full name" required>
+                        <i class="fa-solid fa-user form-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                        <i class="fa-solid fa-envelope form-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Create a password" required>
+                        <i class="fa-solid fa-lock form-icon"></i>
+                        <button type="button" class="password-toggle" onclick="togglePassword('signupPassword')">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+                        <i class="fa-solid fa-lock form-icon"></i>
+                        <button type="button" class="password-toggle" onclick="togglePassword('signupConfirmPassword')">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupDate">Date of Birth</label>
+                        <input type="date" id="signupDate" required>
+                        <i class="fa-solid fa-calendar form-icon"></i>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-btn">
+                        <span>Create Account</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google" onclick="loginWithGoogle()">
+                        <i class="fa-brands fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn facebook" onclick="loginWithFacebook()">
+                        <i class="fa-brands fa-facebook"></i>
+                        Continue with Facebook
+                    </button>
+                </div>
+                <p class="auth-switch">Already have an account? <a href="#login" id="showLogin">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Enhanced Music Player -->
+    <div class="bottom">
+        <div class="player-content">
+            <!-- Song Info -->
+            <div class="song-info">
+                <img src="playing.gif" width="50px" alt="" id="gif" class="playing-gif">
+                <div class="song-details">
+                    <div class="song-name" id="masterSongName">Select a song to play</div>
+                    <div class="artist-name" id="masterArtistName"></div>
+                </div>
+                <button class="like-btn" id="btnLike">
+                    <i class="fa-regular fa-heart" id="likeIcon"></i>
+                </button>
+            </div>
+
+            <!-- Player Controls -->
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button class="control-btn" id="btnShuffle" title="Shuffle">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                    <button class="control-btn" id="previous" title="Previous">
+                        <i class="fa-solid fa-backward"></i>
+                    </button>
+                    <button class="control-btn play-btn" id="masterPlay" title="Play/Pause">
+                        <i class="fa-solid fa-circle-play" id="masterPlayIcon"></i>
+                    </button>
+                    <button class="control-btn" id="next" title="Next">
+                        <i class="fa-solid fa-forward"></i>
+                    </button>
+                    <button class="control-btn" id="btnRepeat" title="Repeat">
+                        <i class="fa-solid fa-repeat" id="repeatIcon"></i>
+                    </button>
+                </div>
+                <div class="progress-container">
+                    <span class="time" id="currentTime">0:00</span>
+                    <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" class="progress-bar">
+                    <span class="time" id="totalTime">0:00</span>
+                </div>
+            </div>
+
+            <!-- Volume Control -->
+            <div class="volume-control">
+                <button class="volume-btn" id="volumeBtn" title="Mute">
+                    <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+                </button>
+                <input type="range" id="volumeBar" min="0" max="100" value="80" class="volume-slider">
+            </div>
+            
+        </div>
+        </div>
+    </div>
+    
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Spotify Clone</h3>
+                <p>A modern music streaming experience built with HTML, CSS, and JavaScript. Enjoy your favorite tracks with a beautiful, responsive interface.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#search">Search</a></li>
+                    <li><a href="#library">Library</a></li>
+                    <li><a href="#playlists">Playlists</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Features</h3>
+                <ul>
+                    <li>Music Streaming</li>
+                    <li>Playlist Creation</li>
+                    <li>Search & Discovery</li>
+                    <li>Liked Songs</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spotify Clone. All rights reserved. | Made with ❤️ for music lovers</p>
+</div>
+    </footer>
+
+    <script src="spotify.js"></script>
+    <script src="https://kit.fontawesome.com/9fc48ef70a.js" crossorigin="anonymous"></script>
+</body>
+</html>
